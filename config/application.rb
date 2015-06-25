@@ -9,6 +9,11 @@ Bundler.require(*Rails.groups)
 module RailsDevise
   extend Econfig::Shortcut
 
+#  if Rails.env.development?
+#    #Econfig.backends.use :keychain, Econfig::Keychain.new("thanks-a-latte")
+#    Econfig.backends.use :keychain, Econfig::Keychain.new("thanks-a-latte", name: "rails-dev")
+#  end
+
   class Application < Rails::Application
 
     config.generators do |g|

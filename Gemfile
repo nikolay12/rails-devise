@@ -7,6 +7,7 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
+gem 'immutable_attributes', '1.2.0'
 group :development, :test do
   gem 'byebug'
   gem 'web-console', '~> 2.0'
@@ -16,6 +17,7 @@ gem 'bootstrap-sass'
 gem 'devise'
 gem 'mysql2'
 gem "econfig", require: "econfig/rails"
+gem "stripe", '1.20.1'
 group :development do
   gem 'better_errors'
   gem 'quiet_assets'
