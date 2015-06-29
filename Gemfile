@@ -8,6 +8,7 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'immutable_attributes', '1.2.0'
+#gem 'validates_timeliness', '~> 3.0'
 group :development, :test do
   gem 'byebug'
   gem 'web-console', '~> 2.0'

@@ -9,5 +9,5 @@
 #puts 'CREATED ADMIN USER: ' << user.email
 #CreatePlanService.new.call
 CreatePlan.call(stripe_id: 'basic', name: 'Basic', amount: 999, interval: 'month', currency: 'gbp', trial_period_days: 10)
-CreatePlan.call(stripe_id: 'standard', name: 'Standard', amount: 2999, interval: 'month', currency: 'gbp', trial_period_days: '10')
-CreatePlan.call(stripe_id: 'pro', name: 'Pro', amount: 9999, interval: 'month', currency: 'gbp', trial_period_days: '10')
+CreatePlan.call(stripe_id: 'standard', name: 'Standard', amount: 2999, interval: 'month', currency: 'gbp', trial_period_days: 10)
+CreatePlan.call(stripe_id: 'pro', name: 'Pro', amount: 9999, interval: 'month', currency: 'gbp', trial_period_days: 10)

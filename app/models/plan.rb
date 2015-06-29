@@ -8,4 +8,6 @@ class Plan < ActiveRecord::Base
     !new_record?
   end
 
+  #TODO: need to add 'active' field to limit the subscriptions only to those; the field needs to be writable!
+
 end

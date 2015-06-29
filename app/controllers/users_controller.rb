@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   before_filter :authenticate_user!
 
+  #TODO remove index action not just from controller, but also from routes
   def index
     @users = User.all
   end
