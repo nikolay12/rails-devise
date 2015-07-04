@@ -9,6 +9,7 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'immutable_attributes', '1.2.0'
 #gem 'validates_timeliness', '~> 3.0'
+gem 'paper_trail', '~> 3.0.6'
 group :development, :test do
   gem 'byebug'
   gem 'web-console', '~> 2.0'
@@ -20,6 +21,7 @@ gem 'mysql2'
 gem "econfig", require: "econfig/rails"
 gem "stripe", '1.20.1'
 group :development do
+  gem 'foreigner'
   gem 'better_errors'
   gem 'quiet_assets'
   gem 'rails_layout'

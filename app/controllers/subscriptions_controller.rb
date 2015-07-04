@@ -1,23 +1,3 @@
-#class SubscriptionsController < ApplicationController
-#  def create
-#    @subscription = Subscription.new(subscription_params)
-#  end
-
-#  def update
-#    Subscription.save(subscription_params)
-#  end
-
-#  private
-
-#  def subscription_params
-#    if new_record?
-#      params.require(:subscription).(Subscription.fields.keys)
-#    else
-#      params.require(:subscription).permit(:ended_at)
-#    end
-#  end
-#end
-
 class SubscriptionsController < ApplicationController
   skip_before_filter :authenticate_user!
 
@@ -33,13 +13,13 @@ class SubscriptionsController < ApplicationController
 
   def create
     @plan = Plan.find(params[:plan_id])
-    Rails.logger.info "We have a plan.."
+    #Rails.logger.info "We have a plan.."
     @subscription = CreateSubscription.call(
         @plan,
         params[:email_address],
         params[:stripeToken]
     )
-    Rails.logger.info "We have a subscription.."
+    #Rails.logger.info "We have a subscription.."
     if @subscription.errors.blank?
       Rails.logger.info "We have no errors.."
       flash[:notice] = 'Thank you for your purchase!' +
