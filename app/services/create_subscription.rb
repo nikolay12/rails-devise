@@ -27,26 +27,17 @@ class CreateSubscription
         stripe_sub = customer.subscriptions.create(
             plan: plan.stripe_id
         )
-        cc = customer.sources.data.last
+        cc = customer.sources.data.last #TODO: Is the last CC indeed at the end of the array?
         Rails.logger.info "CC's last 4 digits: " + cc.last4
       end
 
-      card = Card.new
-      card.brand = cc.brand
-      card.last4 = cc.last4
-      card.country = cc.country
-      card.exp_month = cc.exp_month
-      card.exp_year = cc.exp_year
-      card.fingerprint =  cc.fingerprint
-      card.funding = cc.funding
-      card.user = user
-      card.save!
-
-      Rails.logger.info "CC saved!"
+      card = StoreCardMeta.call(user, cc)
 
       subscription.stripe_id = stripe_sub.id
       subscription.card = card
       subscription.save!
+
+      #TODO: Actually send the email!
 
       Rails.logger.info "Subscription saved!"
 
